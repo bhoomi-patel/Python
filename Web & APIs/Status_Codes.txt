@@ -1,0 +1,9 @@
+# Status codes you MUST know:
+
+ 200: OK - Success!
+ 301/302: Redirect - Page moved
+ 400: Bad Request - You messed up
+ 401: Unauthorized - Login required
+ 404: Not Found - Page doesn't exist
+ 500: Server Error - Their problem, not yours
+
