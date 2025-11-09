@@ -63,4 +63,3 @@ print(f"External link: {external_link}")
 print(f"Header: {header}")
 print(f"Quote text: {text}")
 print(f"Div p tags: {quote}")
-
