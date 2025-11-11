@@ -126,7 +126,7 @@ demo_dynamic_scraping()
 
 
 # simple code
-'''from selenium import webdriver
+from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -168,6 +168,6 @@ try:
     print("Data saved to quotes.json successfully!")
 
 finally:
-    driver.quit()'''
+    driver.quit()
 
 

@@ -1,0 +1,5 @@
+2025-11-11 23:51:43,293 - dual_handle_logger - ERROR - Failed to write user session to cache.
+2025-11-11 23:52:57,044 - dual_handle_logger - INFO - Application is running smoothly.
+2025-11-11 23:52:57,044 - dual_handle_logger - WARNING - User attempted to access a restricted page.
+2025-11-11 23:52:57,044 - dual_handle_logger - ERROR - Failed to write user session to cache.
+2025-11-12 02:03:33,144 - dual_handle_logger - ERROR - Failed to write user session to cache.

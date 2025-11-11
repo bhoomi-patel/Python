@@ -1,0 +1,6 @@
+2025-11-11 23:34:48,076 - my_logger - WARNING - Disk space is low. This WILL go to the file.
+2025-11-11 23:34:48,076 - my_logger - ERROR - Database connection failed. This WILL also go to the file.
+2025-11-11 23:35:43,519 - my_logger - WARNING - Disk space is low. This WILL go to the file.
+2025-11-11 23:35:43,519 - my_logger - ERROR - Database connection failed. This WILL also go to the file.
+2025-11-11 23:35:44,803 - my_logger - WARNING - Disk space is low. This WILL go to the file.
+2025-11-11 23:35:44,803 - my_logger - ERROR - Database connection failed. This WILL also go to the file.

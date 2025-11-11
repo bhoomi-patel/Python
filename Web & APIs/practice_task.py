@@ -1,5 +1,5 @@
 # Practice Task 1: GitHub User Info
-'''import requests
+import requests
 def get_github_info(username):
     url=f"https://api.github.com/users/{username}"
     res = requests.get(url)
@@ -18,7 +18,7 @@ def get_github_info(username):
 
 #test
 user_info = get_github_info('octocat')
-print(user_info)'''
+print(user_info)
 
 # Practice Task 2: Cryptocurrency Prices
 import requests
