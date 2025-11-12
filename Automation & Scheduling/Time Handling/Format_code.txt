@@ -1,0 +1,12 @@
+Common Format Codes:
+
+%Y: Year with century (e.g., 2023)
+%m: Month (01-12)
+%d: Day of the month (01-31)
+%H: Hour in 24-hour format (00-23)
+%I: Hour in 12-hour format (01-12)
+%M: Minute (00-59)
+%S: Second (00-59)
+%p: AM/PM
+%A: Full weekday name (e.g., Sunday)
+%B: Full month name (e.g., October)
