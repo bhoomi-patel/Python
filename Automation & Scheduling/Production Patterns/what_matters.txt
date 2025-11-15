@@ -1,0 +1,46 @@
+Why Structuring Matters
+Production scripts need to be:
+Modular  , Configurable  , Logged  , Timed
+
+---- Best Practices ----
+Concept	Description
+-> CLI via argparse	=  Set variables at runtime (avoid hard‑codling)
+-> Logging system	=  Track errors & performance
+-> Error handling	=  Wrap critical sections with try–except
+-> Scheduling	    =  Deploy periodic jobs with schedule or cron
+-> Time management	=  Use datetime for timestamps & durations
+-> Exit gracefully	=  KeyboardInterrupt handling
+
+---- Memory tricks (quick) ----
+ • argparse           → “Ask Right, Give Parameters” (script asks for params)
+ • logging            → “Log Is Good” (always keep logs)
+ • schedule           → “Set Clock, Let Script Rest” (schedule and sleep)
+ • watchdog           → “Watch Dog; Bark on Create” (react to new files)
+ • subprocess         → “Subprocess = System Call”
+ • datetime           → “Store UTC; convert for views”
+ • production pattern → “Config, Env, Log, Retry, Idempotent”
+
+
+
+# Template : -
+import argparse, logging, schedule, time
+from datetime import datetime
+
+def task():
+  logging.info(f"Task ran at {datetime.now()}")
+
+def main():
+  p = argparse.ArgumentParser()
+  p.add_argument("--interval", type=int, default=10)
+  a = p.parse_args()
+
+  logging.basicConfig(filename="task.log", level=logging.INFO)
+  logging.info("Automation started")
+
+  schedule.every(a.interval).seconds.do(task)
+  while True:
+    schedule.run_pending()
+    time.sleep(1)
+
+if __name__=="__main__":
+  main()

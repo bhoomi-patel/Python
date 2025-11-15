@@ -1,0 +1,9 @@
+{
+  "data_path": "data",
+  "interval_minutes": 60,
+  "apis": {
+    "coingecko": true,
+    "newsapi": true
+  },
+  "log_file": "app.log"
+}
