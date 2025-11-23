@@ -1,3 +1,5 @@
+# install --> pip install Flask Flask-WTF 
+# Flask-WTF is an extension that integrates WTForms with Flask, making it easier to create and handle web forms.
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_wtf import FlaskForm
 from wtforms import StringField, TextAreaField, SubmitField

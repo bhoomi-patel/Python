@@ -1,4 +1,5 @@
 # Jinja2 is A templating engine that lets you create HTML pages with dynamic content.
+# It integrates seamlessly with Flask to render templates.
 from flask import Flask , render_template 
 from datetime import datetime
 app = Flask(__name__)
