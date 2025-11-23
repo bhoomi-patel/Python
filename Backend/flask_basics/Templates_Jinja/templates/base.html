@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>{{title}}</title>
+    <style>
+        body { font-family: Arial; margin: 0; padding: 20px; }
+        nav { margin-bottom: 20px; }
+        nav a { margin-right: 15px; }
+        footer { margin-top: 50px; color: #777; }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        &copy; 2025 Flask Tutorial
+    </footer>
+</body>
+</html>
