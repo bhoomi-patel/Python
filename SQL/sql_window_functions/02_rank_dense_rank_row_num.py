@@ -1,0 +1,2 @@
+# Ranking Window Functions: ROW_NUMBER(), RANK(), DENSE_RANK(), NTILE()
+'''Simple Definition: Ranking window functions assign a numerical rank, row number, or percentile group to each row within a defined window (either the entire result set or specific partitions). They are essential for ordering and prioritizing data based on certain criteria, without collapsing the individual rows.'''
