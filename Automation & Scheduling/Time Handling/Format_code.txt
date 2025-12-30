@@ -10,3 +10,8 @@ Common Format Codes:
 %p: AM/PM
 %A: Full weekday name (e.g., Sunday)
 %B: Full month name (e.g., October)
+%w: Day of week (0-6, Sunday is 0)
+%W: Week of year (00-53, Monday as first day)
+%j: Day of year (001-366)
+%Y-%m-%d: Common date format
+%H:%M:%S: Common time format
