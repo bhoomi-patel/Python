@@ -20,3 +20,51 @@ from SQL.sql_basics.connecting_sqlite import setup_db
 DB_FILE = 'example.db'
 conn = setup_db(DB_FILE)
 cursor = conn.cursor()
+try:
+    # 1. Create an index on Customers.email (often searched)
+    print("\n1. Create index on Customers.email:")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_customers_email ON Customers(email);")
+    conn.commit()
+    print("Index created: idx_customers_email\n")
+    # 2. See all indexes in the database
+    print("2. Show all indexes:")
+    cursor.execute("PRAGMA index_list('Customers');")
+    for row in cursor.fetchall():
+        print(row)
+   # 3. Compare EXPLAIN plans: with and without index
+    print("\n3. EXPLAIN QUERY PLAN for SELECT with indexed column:")
+    query = "SELECT * FROM Customers WHERE email = 'alice@example.com';"
+    cursor.execute(f"EXPLAIN QUERY PLAN {query}")
+    explain_result = cursor.fetchall()
+    for row in explain_result:
+        print(row)
+   # 4. EXPLAIN for a slow query: missing index (full table scan)
+    print("\n4. EXPLAIN QUERY PLAN for SELECT with unindexed column (city):")
+    query2 = "SELECT * FROM Customers WHERE city = 'New York';"
+    cursor.execute(f"EXPLAIN QUERY PLAN {query2}")
+    for row in cursor.fetchall():
+        print(row)
+
+    # 5. Create composite index for faster multi-column searches (customer_id in Orders)
+    print("\n5. Create index on Orders(customer_id, order_date):")
+    cursor.execute("CREATE INDEX IF NOT EXISTS idx_orders_customer_date ON Orders(customer_id, order_date);")
+    conn.commit()
+    print("Index created: idx_orders_customer_date")
+
+    # 6. See effect in EXPLAIN for a JOIN
+    print("\n6. EXPLAIN QUERY PLAN for JOIN using indexed columns:")
+    join_query = """
+        SELECT o.order_id, c.first_name
+        FROM Orders AS o
+        JOIN Customers AS c ON o.customer_id = c.customer_id
+        WHERE o.order_date >= '2023-01-15'
+    """
+    cursor.execute(f"EXPLAIN QUERY PLAN {join_query}")
+    for row in cursor.fetchall():
+        print(row)
+
+except sqlite3.Error as e:
+    print(f"Database error: {e}")
+finally:
+    conn.close()
+    print("Database connection closed.")

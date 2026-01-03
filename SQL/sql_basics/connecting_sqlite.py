@@ -35,7 +35,8 @@ def setup_db(db_file = DB_FILE):
     email TEXT UNIQUE NOT NULL,
     age INTEGER,
     city TEXT,
-    registration_date TEXT DEFAULT CURRENT_DATE); ''')
+    registration_date TEXT DEFAULT CURRENT_DATE,
+    status TEXT DEFAULT 'active'); ''')
 
     # create products table
     cursor.execute("""
